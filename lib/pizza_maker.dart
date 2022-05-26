@@ -19,9 +19,8 @@ class _PizzaMakerState extends State<PizzaMaker> {
   int _index = 0;
   late bool _hideButtons = true;
 
-
-  PizzaObject pizza = PizzaObject();
   
+  PizzaObject pizza = new PizzaObject();
 
   Map<String, bool> meat = {
     'Pepperoni': false,
@@ -45,6 +44,26 @@ class _PizzaMakerState extends State<PizzaMaker> {
     'Aubergine': false,
     'Sopp': false,
   };
+
+  void updatePizza() {
+    meat.forEach((key, value) {
+      if (value) {
+        pizza.addTopping(key);
+      }
+    });
+
+    cheese.forEach((key, value) {
+      if (value) {
+        pizza.addTopping(key);
+      }
+    });
+
+    topping.forEach((key, value) {
+      if (value) {
+        pizza.addTopping(key);
+      }
+    });
+  }
 
   increaseIndex() {
     setState(() {
@@ -267,14 +286,20 @@ class _PizzaMakerState extends State<PizzaMaker> {
               //Skjuler tilbakeknappen hvis man er på første steg
               visible: (_index != 0),
               child: IconButton(
-                onPressed: () => decreaseIndex(),
+                onPressed: () => {
+                  decreaseIndex(),
+                  updatePizza(),
+                },
                 icon: const Icon(Icons.arrow_left_outlined),
               )),
           Visibility(
             //Skjuler framknappen hvis man er på siste steg
             visible: (_index != 4),
             child: IconButton(
-                onPressed: () => increaseIndex()(),
+                onPressed: () => {
+                  increaseIndex(),
+                  updatePizza(),
+                },
                 icon: const Icon(Icons.arrow_right_outlined)),
           )
         ]),

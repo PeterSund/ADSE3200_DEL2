@@ -41,7 +41,6 @@ class ExtraCheckboxState extends State {
         child: Text(" Get Checked Checkbox Values "),
         onPressed: getItems,
       ),
-
       Flexible(
         child :
         ListView(
