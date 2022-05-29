@@ -1,3 +1,4 @@
+import 'package:adse3200/design/app_theme.dart';
 import 'package:adse3200/shopping_cart.dart';
 import 'package:flutter/material.dart';
 
@@ -7,12 +8,14 @@ class AppBarTop extends StatelessWidget implements PreferredSizeWidget {
   @override
   Size get preferredSize => const Size.fromHeight(50);
 
-  final list = List<int>.filled(5, 0);
+  final list = List<int>.filled(2, 0);
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: const Text("Pizza"),
+      foregroundColor: Colors.black,
+      backgroundColor: BACKGROUND_COLOR_APPBAR,
+      title: const Text("Pizzamaker 🍕", style: TextStyle(color: Colors.black, fontSize: 20)), 
       actions: <Widget>[
       //https://stackoverflow.com/questions/51019291/how-can-i-add-item-number-on-the-cart-icon-at-at-appbar-icon-in-flutter-and-how
       Padding(
@@ -30,7 +33,7 @@ class AppBarTop extends StatelessWidget implements PreferredSizeWidget {
                   const IconButton(
                     icon: Icon(
                       Icons.shopping_cart,
-                      color: Colors.white,
+                      color: Colors.black,
                     ),
                     onPressed: null,
                   ),
@@ -40,10 +43,10 @@ class AppBarTop extends StatelessWidget implements PreferredSizeWidget {
                           child: Stack(
                           children: <Widget>[
                             Icon(Icons.brightness_1,
-                                size: 20.0, color: Colors.green[800]),
+                                size: 20.0, color: ACCENT_COLOR),
                             Positioned(
-                                top: 3.0,
-                                right: 4.0,
+                                top: 4.5,
+                                right: 6.0,
                                 child: Center(
                                   child: Text(
                                     list.length.toString(),

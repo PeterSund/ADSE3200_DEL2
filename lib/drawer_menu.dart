@@ -1,3 +1,4 @@
+import 'package:adse3200/design/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class DrawerMenu extends StatelessWidget {
@@ -11,12 +12,12 @@ class DrawerMenu extends StatelessWidget {
         children: const <Widget>[
           DrawerHeader(
             decoration: BoxDecoration(
-              color: Colors.blue,
+              color: BACKGROUND_COLOR_APPBAR,
             ),
             child: Text(
               'Meny',
               style: TextStyle(
-                color: Colors.white,
+                color: Color.fromARGB(255, 0, 0, 0),
                 fontSize: 18,
               ),
             ),

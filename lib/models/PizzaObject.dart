@@ -1,7 +1,8 @@
 class PizzaObject {
-  late String size;
-  late String sauce;
-  late List<String> toppings;
+  String size = "";
+  String sauce = "";
+  String price = "";
+  List<String> toppings = [];
 
   String getSize() {
     return size;
@@ -19,22 +20,27 @@ class PizzaObject {
     sauce = s;
   }
 
+  setPrice(String s) {
+    price = s;
+  }
+
   List<String> getToppings() {
     return toppings;
   }
 
   addTopping(String s) {
-    printPizza();
-    for (String option in toppings) {
-      if (s != option) {
-        toppings.add(s);
-        
-      }
-     
+    if (!toppings.contains(s)) {
+      toppings.add(s);
     }
   }
 
+  removeTopping(String s) {
+    toppings.remove(s);
+  }
+
   void printPizza() {
+    print("1 " + getSize());
+    print("2 " + getSauce());
     toppings.forEach((element) {
       print(element);
     });
@@ -42,5 +48,27 @@ class PizzaObject {
 
   removeToppings(String s) {
     toppings.remove(s);
+  }
+
+  String showOrder() {
+    String s = "";
+    int i = 0;
+    for (var item in toppings) {
+      i++;
+      if (i == 1) {
+        s += item;
+      } else {
+        s += ", " + item;
+      }
+    }
+    String string = size +
+        ", " +
+        sauce +
+        '\n\nIngredienser:\n' +
+        s +
+        '\n\n' +
+        "Pris: " +
+        price;
+    return string;
   }
 }
