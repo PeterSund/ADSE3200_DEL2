@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const Color BACKGROUND_COLOR = Color.fromARGB(198, 255, 255, 255);
+const Color BACKGROUND_COLOR = Color.fromARGB(193, 255, 255, 255);
 const Color BACKGROUND_COLOR_APPBAR = Color.fromARGB(172, 219, 217, 136);
 const Color ACCENT_COLOR = Color.fromARGB(255, 209, 86, 86);
 const Color TEXT_COLOR_MAIN = Color.fromARGB(0, 0, 0, 0);

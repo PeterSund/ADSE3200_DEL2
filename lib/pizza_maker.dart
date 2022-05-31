@@ -20,16 +20,18 @@ class _PizzaMakerState extends State<PizzaMaker> {
 
   Map<String, bool> meat = {
     'Pepperoni': false,
-    'Biff': false,
-    'Kylling': false,
     'Skinke': false,
+    'Parmaskinke': false,
+    'Biff': false,
+    'Fennikelsalami'
+    'Kylling': false,
   };
 
   Map<String, bool> cheese = {
     'Mozerella': false,
+    'Jarlsberg': false,
     'Parmesan': false,
     'Gorgonzola': false,
-    'Jarlsberg': false,
   };
 
   Map<String, bool> topping = {
@@ -39,6 +41,8 @@ class _PizzaMakerState extends State<PizzaMaker> {
     'Oliven': false,
     'Aubergine': false,
     'Sopp': false,
+    'Ananas': false,
+    'Artisjokk': false,
   };
 
   setSize(String size) {

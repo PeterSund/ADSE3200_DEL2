@@ -14,7 +14,7 @@ class ShoppingCart extends StatelessWidget {
     ),
     const ListTile(
       title: Text('Liten eksempelpizza'),
-      subtitle: Text('Hvit saus, mozerella, augbergine'),
+      subtitle: Text('Hvit saus, mozerella, aubergine'),
       trailing: Text('149,-'),
     )
   ];
